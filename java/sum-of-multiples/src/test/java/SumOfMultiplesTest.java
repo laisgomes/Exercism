@@ -29,7 +29,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf3aUpToSeven() {
 
@@ -41,7 +40,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf3and5UpToTen() {
 

@@ -9,10 +9,22 @@ class SumOfMultiples {
     }
 
     int getSum() {
-        if ( number == 4 ){
-            return 3;
+        int sum = 0;
+        for (int item = 0; item < number; item++) {
+            if (isMultiple(item)) {
+                sum = sum + item;
+            }
         }
-        return 0;
+        return sum;
     }
 
+    boolean isMultiple(int numberToCheck) {
+        int countCheck = 0;
+        for (int item = 0; item < set.length; item++) {
+            if (numberToCheck % set[item] == 0) {
+                countCheck++;
+            }
+        }
+        return countCheck != 0;
+    }
 }
