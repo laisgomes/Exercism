@@ -15,12 +15,6 @@ class SumOfMultiples {
     }
 
     boolean isMultiple(int numberToCheck) {
-        int countCheck = 0;
-        for (int item = 0; item < set.length; item++) {
-            if (numberToCheck % set[item] == 0) {
-                countCheck++;
-            }
-        }
-        return countCheck != 0;
+        return IntStream.of(set).anyMatch(multiNumber -> numberToCheck % multiNumber == 0);
     }
 }
