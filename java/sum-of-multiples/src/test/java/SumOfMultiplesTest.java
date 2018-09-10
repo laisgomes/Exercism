@@ -52,7 +52,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf3and5UpToOneHundred() {
 
@@ -65,7 +64,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf3and5UpToOneThousand() {
 
@@ -78,7 +76,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf7and13and17UpToTwenty() {
 
@@ -92,7 +89,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf4and6UpToFifteen() {
 
@@ -105,7 +101,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf5and6and8UpToOneHundredFifty() {
 
@@ -119,7 +114,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf5and25UpToFiftyOne() {
 
@@ -132,7 +126,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOf43and47UpToTenThousand() {
 
@@ -145,7 +138,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOfOneUpToOneHundred() {
 
@@ -157,7 +149,6 @@ public class SumOfMultiplesTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSumOfMultiplesOfNoneUpToTenThousand() {
 
