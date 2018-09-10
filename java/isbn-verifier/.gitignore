@@ -48,5 +48,5 @@ gradle-app.setting
 *.xml
 .idea/
 out/
-src/.solution.json
+.solution.json
 
