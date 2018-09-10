@@ -50,3 +50,9 @@ gradle-app.setting
 out/
 .solution.json
 
+.gradle
+target
+build
+out
+logs
+
