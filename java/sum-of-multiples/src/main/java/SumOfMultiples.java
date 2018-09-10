@@ -1,3 +1,5 @@
+import java.util.stream.IntStream;
+
 class SumOfMultiples {
 
     private final int number;
@@ -9,13 +11,7 @@ class SumOfMultiples {
     }
 
     int getSum() {
-        int sum = 0;
-        for (int item = 0; item < number; item++) {
-            if (isMultiple(item)) {
-                sum = sum + item;
-            }
-        }
-        return sum;
+       return IntStream.range(1,number).filter(this::isMultiple).sum();
     }
 
     boolean isMultiple(int numberToCheck) {
