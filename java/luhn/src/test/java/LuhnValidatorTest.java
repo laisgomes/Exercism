@@ -48,43 +48,36 @@ public class LuhnValidatorTest {
         assertFalse(luhnValidator.isValid("8273 1232 7352 0569"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testStringsContainingNonDigitInvalid() {
         assertFalse(luhnValidator.isValid("055a 444 285"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testStringContainingPunctuationInvalid() {
         assertFalse(luhnValidator.isValid("055-444-285"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testStringContainingSymbolsInvalid() {
         assertFalse(luhnValidator.isValid("055£ 444$ 285"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testSingleSpaceWithZeroInvalid() {
         assertFalse(luhnValidator.isValid(" 0"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testMoreThanSingleZeroValid() {
         assertTrue(luhnValidator.isValid("0000 0"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testDigitNineConvertedToOutputNine() {
         assertTrue(luhnValidator.isValid("091"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testStringsWithNonDigitsInvalid() {
         assertFalse(luhnValidator.isValid(":9"));
@@ -95,7 +88,6 @@ public class LuhnValidatorTest {
      * passing implementations. For more detail, check out issue #972 here:
      * (https://github.com/exercism/java/issues/972).
     */
-    @Ignore("Remove to run test")
     @Test
     public void testStringContainingSymbolsInvalidJavaTrackSpecific() {
         assertFalse(luhnValidator.isValid("85&"));
