@@ -32,3 +32,5 @@ java/*/gradle/*
 java/*/build/*
 java/*/*.iml
 java/*/*.xml
+java/*/gradlew
+java/*/gradlew.bat
