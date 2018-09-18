@@ -23,7 +23,6 @@ public class MatrixTest {
 		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
 	}
 	
-	@Ignore("Remove to run test")
 	@Test
 	public void extractRowFromMatrixTest() {
 		String matrixAsString = "1 2\n3 4";
@@ -35,7 +34,6 @@ public class MatrixTest {
 		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
 	}
 	
-	@Ignore("Remove to run test")
 	@Test
 	public void extractRowFromDiffWidthsMatrixTest() {
 		String matrixAsString = "1 2\n10 20";
@@ -47,7 +45,6 @@ public class MatrixTest {
 		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
 	}
 	
-	@Ignore("Remove to run test")
 	@Test
 	public void extractRowFromNonSquareMatrixTest() {
 		String matrixAsString = "1 2 3\n4 5 6\n7 8 9\n8 7 6";
