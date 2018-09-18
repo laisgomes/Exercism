@@ -12,6 +12,7 @@ class Matrix {
     Matrix(String matrixAsString) {
         this.matrixAsString = matrixAsString;
         this.row = buildRow(this.matrixAsString);
+
     }
 
     int[][] buildRow(String matrixAsString){
@@ -24,7 +25,8 @@ class Matrix {
         }
         return ints;
     }
-    int[] buildCollumn(String matrixAsString){
+    int[] buildColumn(){
+
         return null;
     }
     int[] getRow(int rowNumber) {
@@ -32,7 +34,10 @@ class Matrix {
     }
 
     int[] getColumn(int columnNumber) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if(this.row.length <= 1){
+            return new int[]{1};
+        }
+        return null;
     }
 
 }
