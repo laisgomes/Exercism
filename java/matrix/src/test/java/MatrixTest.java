@@ -56,7 +56,6 @@ public class MatrixTest {
 		assertArrayEquals(expectedRow, matrix.getRow(rowIndex));
 	}
 	
-	@Ignore("Remove to run test")
 	@Test
 	public void extractColumnFromOneNumberMatrixTest() {
 		String matrixAsString = "1";
