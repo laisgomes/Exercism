@@ -34,3 +34,4 @@ java/*/*.iml
 java/*/*.xml
 java/*/gradlew
 java/*/gradlew.bat
+.history
