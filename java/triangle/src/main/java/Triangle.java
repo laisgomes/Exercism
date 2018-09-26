@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
 class Triangle {
@@ -7,32 +11,49 @@ class Triangle {
     private final double side3;
 
     Triangle(double side1, double side2, double side3) throws TriangleException {
-        validateSizes(side1, side2, side3);
+
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
+        validateSizes();
     }
 
-    void validateSizes(double side1, double side2, double side3) throws TriangleException {
-        boolean isGreaterThanZero = DoubleStream.of(side1, side2, side3).anyMatch( s -> s <= 0);
-        boolean isInequality = DoubleStream.of(side1, side2).sum() < side3;
-        if (isGreaterThanZero || isInequality) {
+    void validateSizes() throws TriangleException {
+        boolean isGreaterThanZero = DoubleStream.of(side1, side2, side3).anyMatch(s -> s <= 0);
+        if (isGreaterThanZero || isInequality(side1, side2, side3) ) {
             throw new TriangleException();
         }
 
     }
 
+    boolean isInequality(double side1, double side2, double side3) {
+
+        List<Double> listOfSize = Arrays.asList(side1, side2, side3);
+        List<Boolean> checkList = new ArrayList<>();
+        for (int item = 0; item < listOfSize.size(); item++) {
+            int finalItem = item;
+            Double sumOfSides = listOfSize.stream().filter(s -> s != listOfSize.get(finalItem))
+                    .collect(Collectors.toList()).stream().reduce( 0.0, Double::sum);
+
+            checkList.add(listOfSize.get(item) <= sumOfSides);
+
+        }
+        return checkList.stream().anyMatch(s -> s == false);
+    }
+
     boolean isEquilateral() {
-        int sizeUnique = DoubleStream.of(side1, side2, side3).distinct().toArray().length;
-        if (sizeUnique == 1) {
+        if (getNumberOfDistinctSides() == 1) {
             return true;
         }
         return false;
     }
 
+    private int getNumberOfDistinctSides() {
+        return DoubleStream.of(side1, side2, side3).distinct().toArray().length;
+    }
+
     boolean isIsosceles() {
-        int numberUniques = DoubleStream.of(side1, side2, side3).distinct().toArray().length;
-        if (numberUniques <= 2 ){
+        if (getNumberOfDistinctSides() <= 2) {
             return true;
         }
 
@@ -40,7 +61,12 @@ class Triangle {
     }
 
     boolean isScalene() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        if (getNumberOfDistinctSides() == 3) {
+            return true;
+        }
+
+        return false;
     }
+
 
 }
