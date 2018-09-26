@@ -14,8 +14,9 @@ class Triangle {
     }
 
     void validateSizes(double side1, double side2, double side3) throws TriangleException {
-
-        if (DoubleStream.of(side1, side2, side3).anyMatch( s -> s <= 0)) {
+        boolean isGreaterThanZero = DoubleStream.of(side1, side2, side3).anyMatch( s -> s <= 0);
+        boolean isInequality = DoubleStream.of(side1, side2).sum() < side3;
+        if (isGreaterThanZero || isInequality) {
             throw new TriangleException();
         }
 

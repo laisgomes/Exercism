@@ -74,7 +74,6 @@ public class TriangleTest {
         assertTrue(triangle.isIsosceles());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void isoscelesTrianglesMustHaveAtLeastTwoEqualSides() throws TriangleException {
         Triangle triangle = new Triangle(2, 3, 4);
@@ -82,14 +81,12 @@ public class TriangleTest {
         assertFalse(triangle.isIsosceles());
     }
     
-    @Ignore("Remove to run test")
     @Test
     public void testSidesThatViolateTriangleInequalityAreNotIsoscelesEvenIfTwoAreEqual() throws TriangleException {
         expectedException.expect(TriangleException.class);
         new Triangle(1, 1, 3);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void verySmallTrianglesCanBeIsosceles() throws TriangleException {
         Triangle triangle = new Triangle(0.5, 0.4, 0.5);
