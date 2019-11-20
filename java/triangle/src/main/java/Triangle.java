@@ -18,7 +18,7 @@ class Triangle {
         validateSizes();
     }
 
-    void validateSizes() throws TriangleException {
+    private void validateSizes() throws TriangleException {
         boolean isGreaterThanZero = DoubleStream.of(side1, side2, side3).anyMatch(s -> s <= 0);
         if (isGreaterThanZero || isInequality(side1, side2, side3) ) {
             throw new TriangleException();
@@ -26,26 +26,23 @@ class Triangle {
 
     }
 
-    boolean isInequality(double side1, double side2, double side3) {
+    private boolean isInequality(double side1, double side2, double side3) {
 
         List<Double> listOfSize = Arrays.asList(side1, side2, side3);
         List<Boolean> checkList = new ArrayList<>();
         for (int item = 0; item < listOfSize.size(); item++) {
             int finalItem = item;
-            Double sumOfSides = listOfSize.stream().filter(s -> s != listOfSize.get(finalItem))
+            Double sumOfSides = listOfSize.stream().filter(s -> !s.equals(listOfSize.get(finalItem)))
                     .collect(Collectors.toList()).stream().reduce( 0.0, Double::sum);
 
             checkList.add(listOfSize.get(item) <= sumOfSides);
 
         }
-        return checkList.stream().anyMatch(s -> s == false);
+        return checkList.stream().anyMatch(s -> !s);
     }
 
     boolean isEquilateral() {
-        if (getNumberOfDistinctSides() == 1) {
-            return true;
-        }
-        return false;
+        return getNumberOfDistinctSides() == 1;
     }
 
     private int getNumberOfDistinctSides() {
@@ -53,19 +50,11 @@ class Triangle {
     }
 
     boolean isIsosceles() {
-        if (getNumberOfDistinctSides() <= 2) {
-            return true;
-        }
-
-        return false;
+        return getNumberOfDistinctSides() <= 2;
     }
 
     boolean isScalene() {
-        if (getNumberOfDistinctSides() == 3) {
-            return true;
-        }
-
-        return false;
+        return getNumberOfDistinctSides() == 3;
     }
 
 
