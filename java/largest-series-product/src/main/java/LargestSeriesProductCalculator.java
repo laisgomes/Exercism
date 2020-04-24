@@ -29,14 +29,15 @@ class LargestSeriesProductCalculator {
         List<List<Integer>> longList = new ArrayList<>();
 
         int size = inputNumber.length()-1;
+
         for (int i = 0; i < size; i++) {
             ArrayList<Integer> list = new ArrayList<>();
-
-            String substring = inputNumber.substring(i, i + numberOfDigits);
-            for (char ch : substring.toCharArray()) {
-                list.add(Integer.parseInt(String.valueOf(ch)));
+            if (longList.size() <=inputNumber.length()-numberOfDigits) {
+                String substring = inputNumber.substring(i, i + numberOfDigits);
+                for (char ch : substring.toCharArray()) {
+                    list.add(Integer.parseInt(String.valueOf(ch)));
+                }
             }
-
             longList.add(list);
         }
        return longList;
